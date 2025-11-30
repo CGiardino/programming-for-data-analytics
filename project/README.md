@@ -1,62 +1,35 @@
-# Residential Real Estate Pricing Analysis in Dublin  
+# Project Description
+The aim of this project is to acquire, clean, analyze, and model health-insurance data in order to classify individuals into low, medium, or high insurance-risk categories.  
+The project will use the publicly available Health Insurance Charges Dataset (Kaggle), which includes demographic and lifestyle variables (age, BMI, smoker status, sex, region, and number of dependents) along with total medical charges billed to insurance.  
+Source: https://www.kaggle.com/datasets/nalisha/health-insurance-charges-dataset.  
+The final result is a **Jupyter Notebook** including data acquisition, analysis, modeling, and visualizations. 
 
-This repository contains the project plan and final work for a **data analytics project** focused on analyzing **residential real estate pricing trends in Dublin**.  
-The work is completed as part of the Programming for Data Analytics module.
+The project is structured over a 5-week timeline as follows:
 
----
+### Week 1 : Data Setup, Cleaning & Preprocessing
+1. Review and Load the dataset
+2. Define the risk-classification target (low / medium / high)
+3. Clean the data (handle types, normalize numeric features, encode categorical)
+4. Create risk labels from charges
+5. Create an SQLite database and store the cleaned dataset
+6. Run simple SQL queries to confirm correct storage and retrieval
 
-## Project Description
+### Week 2 : Exploratory Data Analysis
+1. Load data from SQLite into pandas
+2. Plot distributions (age, BMI, charges, risk classes)
+3. Examine correlations
+4. Summarize key findings
 
-The goal of this project is to acquire, clean, analyze, and model real-estate transaction data for Dublin.  
-The analysis will use public datasets:
+### Week 3 : Neural Network Model
+1. Split data into training and test sets
+2. Build and train a neural-network classifier
+3. Validate and tune
 
-- **CSO HPM04 - Market-based Household Purchases of Residential Dwellings**  
-  This dataset provides detailed transaction data for residential property purchases across Ireland, including Eircode/zipcode information which enables precise geographic analysis of Dublin's real estate market. The data includes breakdowns by dwelling type, purchaser type, and location.
+### Week 4 : Model Evaluation
+1. Evaluate accuracy, loss
 
-The final result is a **Jupyter Notebook** including data acquisition, analysis, modeling, and visualizations.
-
----
-
-# 7-Week Project Plan
-
-### Week 1 Planning & Data Source Identification
-- Define research questions  
-- Identify and validate data sources  
-- Create repository structure  
-- Draft notebook outline  
-- Decide libraries (pandas, matplotlib, scikit-learn, GeoPandas, etc.)
-
-### Week 2 Data Acquisition & Cleaning
-- Download/import datasets  
-- Load data into pandas  
-- Clean and normalize fields  
-- Handle missing values and outliers  
-- Produce initial descriptive plots  
-
-###  Week 3 Exploratory Data Analysis (EDA)
-- Explore data structure and statistical patterns  
-- Generate plots (trends, distributions, correlations)  
-- Compute metrics such as YOY change and median prices  
-- Start writing markdown explanations  
-
-###  Week 4 Advanced Analysis / Machine Learning
-- Apply regression, forecasting, or clustering methods  
-- Visualize and evaluate model performance  
-- Document insights  
-
-###  Week 5 Geographic Analysis
-- Use GeoPandas/Folium  
-- Create maps (median prices, density heatmaps)  
-- Optional interactive features  
-
-### Week 6 Documentation & Notebook Polish
-- Write clear conclusions  
-- Finalize explanations and narrative  
-- Ensure notebook runs top-to-bottom  
-- Save notebook with all outputs  
-
-### Week 7 — Final Review & Submission
-- Re-run entire notebook  
-- Improve formatting, labels, and plot clarity  
-- Add research references  
-- Final commit
+### Week 5 : Final Review & Submission
+1. Re-run all analyses for consistency
+2. Improve formatting and clarity
+3. Review references
+4. Final commit and submission
