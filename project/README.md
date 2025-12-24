@@ -1,82 +1,89 @@
 # Health Insurance Risk Classifier
 
-The aim of this project is to acquire, clean, analyze, and model health-insurance data in order to classify individuals into low, medium, or high insurance-risk categories.
+Analyze health insurance data and classify individuals into low, medium, or high insurance-risk categories using machine learning.
 
 ## Dataset
-The project uses the publicly available Health Insurance Charges Dataset from Kaggle, which includes:
-- Demographic variables: age, sex, region
-- Lifestyle variables: BMI, smoker status, number of dependents
+**Health Insurance Charges Dataset** from Kaggle, containing:
+- Demographics: age, sex, region
+- Health metrics: BMI, smoker status, number of dependents
 - Medical charges billed to insurance
 
 **Source:** https://www.kaggle.com/datasets/nalisha/health-insurance-charges-dataset
 
+## Repository Contents
 
-## What This Repository Contains
-
-- **`health_insurance_risk_classifier.ipynb`** - Main Jupyter notebook with complete analysis pipeline including:
-  - Data loading and preprocessing
-  - Exploratory data analysis with visualizations
-  - Risk classification logic
-  - Neural network model training using TensorFlow/Keras
+- **`health_insurance_risk_classifier.ipynb`** - Complete analysis pipeline:
+  - Data loading, cleaning, and preprocessing
+  - Exploratory data analysis with 11 visualizations
+  - Rule-based risk classification
+  - Neural network model training (TensorFlow/Keras)
   - Model evaluation and performance metrics
 
-- **`data/health_insurance_data.csv`** - Dataset containing health insurance information with features:
-  - Age, BMI, children, sex, smoker status, region, and charges
+- **`data/`** - Dataset files:
+  - `health_insurance_data.csv` - Raw data with features (age, BMI, children, sex, smoker, region, charges)
+  - `health_insurance.db` - SQLite database with processed data
 
-- **`requirements.txt`** - Python package dependencies
+- **`plots/`** - Generated visualization files (11 plots)
 
-- **`PROJECT_PLAN.md`** - Detailed 5-week project timeline and milestones
+- **`requirements.txt`** - Python dependencies
 
-## How to Use
+- **`PROJECT_PLAN.md`** - 5-week project timeline
+
+## Quick Start
 
 ### 1. Setup Environment
 
 ```bash
-# Navigate to the project directory
 cd project
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
 ### 2. Run the Notebook
 
-Open the Jupyter notebook in PyCharm or Jupyter:
-
 ```bash
 jupyter notebook health_insurance_risk_classifier.ipynb
 ```
 
-Or open directly in PyCharm (supports Jupyter notebooks natively).
+Or open directly in PyCharm (supports Jupyter notebooks).
 
-### 3. Execute the Analysis
+### 3. Execute Analysis
 
-Run all cells in sequence (Cell → Run All) or execute step by step:
+Run all cells (Cell → Run All) or step by step:
 
-- **Step 1-3**: Data loading and preprocessing
-- **Step 4**: Data normalization
-- **Step 5**: Risk classification
-- **Step 6**: Exploratory data analysis and visualizations
-- **Step 7**: Neural network model training
-- **Step 8**: Model evaluation and predictions
+- **Steps 1-4**: Data loading, cleaning, encoding, and normalization
+- **Steps 5-7**: Risk classification and database storage
+- **Steps 8-12**: Exploratory data analysis and visualizations
+- **Steps 13-14**: Neural network training and evaluation
+- **Step 15**: Conclusions and key findings
 
-### 4. Understanding the Output
+## Model Architecture
 
-The notebook will generate:
-- Distribution plots for age, BMI, and risk categories
-- Correlation heatmap
-- Classification report with precision, recall, and F1-scores
-- Confusion matrix showing prediction accuracy per class
-- Comparison table of actual vs predicted risk categories
+**Neural Network:**
+- Input: 9 features (age, BMI, children, sex, smoker, 4 regions)
+- Hidden layer: 16 neurons with ReLU activation
+- Dropout: 30% regularization
+- Output: 3 classes (Low/Medium/High risk) with softmax
 
-## Model Evaluation
+**Training:**
+- Adam optimizer with learning rate 0.01
+- Early stopping (patience=50 epochs)
+- 80/20 train-test split
 
-The TensorFlow neural network model achieves high accuracy in classifying insurance risk. Performance metrics are displayed in the final cells of the notebook.
+## Output
 
-## Notes
+The notebook generates:
+- Distribution plots for age, BMI, charges, and risk categories
+- Correlation heatmap showing feature relationships
+- Classification report with precision, recall, F1-scores
+- Confusion matrix (counts and percentages)
+- Per-class performance metrics
 
-- The model uses a Sequential neural network with one hidden layer (8 nodes) and dropout regularization
-- Training includes early stopping to prevent overfitting
-- Class imbalance is handled through weighted training
+## Key Findings
 
-For detailed project timeline and methodology, see `PROJECT_PLAN.md`.
+- **Smoking status** is the strongest predictor of insurance risk
+- Age and BMI positively correlate with risk categories
+- Neural network achieves high accuracy in risk classification
+- Sex and region have minimal impact on risk
+
+See `PROJECT_PLAN.md` for detailed timeline.
+
